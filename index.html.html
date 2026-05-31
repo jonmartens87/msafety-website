@@ -171,7 +171,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 80px;
+            height: 115px;
             width: 90%;
             max-width: var(--container-width);
             margin: 0 auto;
@@ -200,10 +200,14 @@
 }
 
 .logo-image {
-    height: 55px;
+    height: 90px;
     width: auto;
     display: block;
     object-fit: contain;
+}
+
+.footer-brand .logo-image {
+    height: 140px;
 }
 
         .logo-text {
@@ -288,7 +292,7 @@
             min-height: 90vh;
             display: flex;
             align-items: center;
-            padding-top: 80px; /* Offset for header */
+            padding-top: 115px; /* Offset for header */
             color: var(--white);
             position: relative;
             overflow: hidden;
@@ -464,12 +468,18 @@
             border-left: 8px solid var(--primary-red);
             position: relative;
             display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
+            align-items: center;
+            justify-content: center;
             padding: 30px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.15);
             color: var(--white);
             background-image: linear-gradient(135deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.8) 100%);
+        }
+
+        .about-image-placeholder img {
+            width: 90%;
+            max-height: 90%;
+            object-fit: contain;
         }
 
         .about-image-placeholder::after {
@@ -868,7 +878,7 @@
             .nav-menu {
                 position: fixed;
                 left: -100%;
-                top: 80px;
+                top: 115px;
                 flex-direction: column;
                 background-color: var(--dark-black);
                 width: 100%;
@@ -1080,8 +1090,7 @@
             <div class="container">
                 <div class="about-grid">
                     <div class="about-image-placeholder">
-                        <h3>Martens Safety</h3>
-                        <p>Bridging the Gap Between Field & Management</p>
+                        <img src="msafety-logo.png" alt="Martens Safety Consulting Logo">
                     </div>
                     <div class="about-content">
                         <span class="section-tag" style="text-align: left; margin-bottom: 5px;">About the Consultant</span>
@@ -1253,7 +1262,7 @@
         <div class="footer-main">
             <div class="footer-brand">
                 <div class="logo-area" style="margin-bottom: 15px;">
-                    <div class="logo-icon">M</div>
+                    <img src="msafety-logo.png" alt="Martens Safety Consulting Logo" class="logo-image">
                     <div class="logo-text">
                         Martens
                         <span>Safety Consulting</span>
