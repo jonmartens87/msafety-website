@@ -1207,7 +1207,7 @@
 
                     <!-- Contact Form Area -->
                     <div class="contact-form-container">
-                        <form id="contactForm">
+                        <form id="contactForm" action="https://formspree.io/f/mpqngwjn" method="POST">
                             <div class="form-group-row">
                                 <div class="form-group">
                                     <label for="firstName">First Name</label>
@@ -1336,33 +1336,41 @@
             });
         });
 
-        // CONTACT FORM MOCK SUBMISSION
-        const contactForm = document.getElementById('contactForm');
-        const formStatus = document.getElementById('formStatus');
+        // CONTACT FORM SUBMISSION
+const contactForm = document.getElementById('contactForm');
+const formStatus = document.getElementById('formStatus');
 
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
+contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
 
-            const firstName = document.getElementById('firstName').value;
-            const email = document.getElementById('email').value;
+    const formData = new FormData(contactForm);
 
-            // Simple user validation feedback
-            if (firstName && email) {
-                formStatus.textContent = `Thank you, ${firstName}. Your inquiry has been logged. We will reach out to you within 24 business hours.`;
-                formStatus.className = 'form-status success';
-                
-                // Clear input fields
-                contactForm.reset();
-            } else {
-                formStatus.textContent = "Please fill in all required fields.";
-                formStatus.className = 'form-status error';
+    try {
+        const response = await fetch(contactForm.action, {
+            method: "POST",
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
             }
-
-            // Remove message status after 6 seconds
-            setTimeout(() => {
-                formStatus.style.display = 'none';
-            }, 6000);
         });
+
+        if (response.ok) {
+            formStatus.textContent = "Thank you. Your inquiry has been sent successfully.";
+            formStatus.className = 'form-status success';
+            contactForm.reset();
+        } else {
+            formStatus.textContent = "There was a problem sending your inquiry.";
+            formStatus.className = 'form-status error';
+        }
+    } catch (error) {
+        formStatus.textContent = "Network error. Please try again.";
+        formStatus.className = 'form-status error';
+    }
+
+    setTimeout(() => {
+        formStatus.style.display = 'none';
+    }, 6000);
+});
     </script>
 </body>
 </html>
