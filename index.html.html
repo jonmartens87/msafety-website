@@ -184,25 +184,27 @@
             gap: 12px;
         }
 
-        .logo-icon {
-            .logo-image {
-    height: 50px;
+       .logo-icon {
+    width: 45px;
+    height: 45px;
+    background-color: var(--primary-red);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-display);
+    font-weight: 800;
+    color: var(--white);
+    font-size: 1.5rem;
+    border: 2px solid var(--white);
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+.logo-image {
+    height: 55px;
     width: auto;
     display: block;
+    object-fit: contain;
 }
-            width: 45px;
-            height: 45px;
-            background-color: var(--primary-red);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: var(--font-display);
-            font-weight: 800;
-            color: var(--white);
-            font-size: 1.5rem;
-            border: 2px solid var(--white);
-            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%); /* Industrial bolt shape */
-        }
 
         .logo-text {
             color: var(--white);
