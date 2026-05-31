@@ -171,7 +171,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 80px;
+            height: 120px;
             width: 90%;
             max-width: var(--container-width);
             margin: 0 auto;
@@ -200,10 +200,14 @@
 }
 
 .logo-image {
-    height: 55px;
+    height: 95px;
     width: auto;
     display: block;
     object-fit: contain;
+}
+
+.footer-brand .logo-image {
+    height: 150px;
 }
 
         .logo-text {
@@ -464,12 +468,18 @@
             border-left: 8px solid var(--primary-red);
             position: relative;
             display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: 30px;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.15);
             color: var(--white);
             background-image: linear-gradient(135deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.8) 100%);
+        }
+
+        .about-image-placeholder img {
+            max-width: 85%;
+            max-height: 85%;
+            object-fit: contain;
         }
 
         .about-image-placeholder::after {
@@ -1080,8 +1090,7 @@
             <div class="container">
                 <div class="about-grid">
                     <div class="about-image-placeholder">
-                        <h3>Martens Safety</h3>
-                        <p>Bridging the Gap Between Field & Management</p>
+                        <img src="msafety-logo.png" alt="Martens Safety Consulting Logo">
                     </div>
                     <div class="about-content">
                         <span class="section-tag" style="text-align: left; margin-bottom: 5px;">About the Consultant</span>
